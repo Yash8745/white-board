@@ -7,16 +7,17 @@ import Navbar from "react-bootstrap/Navbar";
 const Header = () => {
   return (
     <Navbar bg="info" data-bs-theme="dark" className="rounded text-end">
-      <Container className="justify-content-between">
-        <Row>
-          <Col>
+      <Container className="">
+        <Row className="w-100">
+          <Col className="text-start">
             <Navbar.Brand href="#home">White Board</Navbar.Brand>
           </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Nav className="me-auto ">
-              <Nav.Link href="#features">Login</Nav.Link>
+          <Col className="">
+            <Nav className="me-auto justify-content-end ">
+              <Nav.Link href="#features" className="">
+                Login
+              </Nav.Link>
+
               <Nav.Link href="#pricing">User</Nav.Link>
             </Nav>
           </Col>
