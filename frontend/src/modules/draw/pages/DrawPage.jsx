@@ -5,17 +5,21 @@ import { Button } from "../../../shared/components/Button";
 import Container from "react-bootstrap/esm/Container";
 import Players from "../components/Players";
 import Row from "react-bootstrap/esm/Row";
+import Col from "react-bootstrap/esm/Col";
 
 export const DrawPage = () => {
   return (
     <Container>
       <Header />
       <Row>
-        <Players/>
-
+        <Col md={2} className="border-end">
+          <Players />
+        </Col>
+        <Col>
+          <WhiteBoard />
+        </Col>
       </Row>
 
-      <WhiteBoard />
       <div>DrawPage</div>
       <Button />
     </Container>

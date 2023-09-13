@@ -3,10 +3,17 @@ import React from 'react'
 import Card from 'react-bootstrap/Card'
 
 export const Players = () => {
-  return (
+  return (<>
     <Card>
-      <Card.Body>This is some text within a card body.</Card.Body>
+      <Card.Body>Player 1</Card.Body>
     </Card>
+    <Card>
+      <Card.Body>Player 1</Card.Body>
+    </Card>
+    <Card>
+      <Card.Body>Player 1</Card.Body>
+    </Card>
+    </>
   )
 }
 
