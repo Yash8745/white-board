@@ -6,8 +6,18 @@ import Container from "react-bootstrap/esm/Container";
 import Players from "../components/Players";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
+import Colors from "../components/Colors";
+import { useState } from "react";
 
+// Function to be send to colors.jsx and its value to be send to whiteBoard
 export const DrawPage = () => {
+  const [selectedColor, setSelectedColor] = useState(null);
+  const clickColor = (color) => {
+    setSelectedColor(color);
+    console.log(color);
+    
+  };
+
   return (
     <Container>
       <Header />
@@ -16,7 +26,9 @@ export const DrawPage = () => {
           <Players />
         </Col>
         <Col>
-          <WhiteBoard />
+          <WhiteBoard color={selectedColor}/>
+          
+          <Colors click={clickColor}/>
         </Col>
       </Row>
 

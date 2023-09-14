@@ -1,42 +1,49 @@
-import React, { useEffect, useRef,useState } from "react";
+// Note to future self 
+// Changing the canvas height or width resets all of its other properties like pencolor or line thickness 
+// This is a defalt feature and not your fault 
+// Please keep that in mind while editing canvas in the future 
+// Yours Truly 
+// Yash(2hr wasted on finding this)
 
-const WhiteBoard = () => {
+import React, { useEffect, useRef, useState } from "react";
+
+const WhiteBoard = (props) => {
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [context, setContext] = useState(null);
   const [prevX, setPrevX] = useState(0);
   const [prevY, setPrevY] = useState(0);
-  
+
   const divRef = useRef(null);
-  
+
   useEffect(() => {
-  
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    setContext(ctx);
-    ctx.strokeStyle = 'black';
-    ctx.lineWidth = 2;
-    
-    const canvasdiv=divRef.current;
+    const ctx = canvas.getContext("2d");
+    const canvasdiv = divRef.current;
 
     // const canvasheight=canvasdiv.offsetHeight;
     // const canvaswidth=canvasdiv.offsetWidth;
-    //Will get the height and width including border and margin 
+    //Will get the height and width including border and margin
 
-    //Excludes border and margin 
-    const canvasheight=canvasdiv.clientHeight;
-    const canvaswidth=canvasdiv.clientWidth;
+    //Excludes border and margin
+    const canvasheight = canvasdiv.clientHeight;
+    const canvaswidth = canvasdiv.clientWidth;
+
+    canvas.width = canvaswidth;
+    canvas.height = canvasheight;
     
-    canvas.width=canvaswidth;
-    canvas.height=canvasheight;
-
+    ctx.strokeStyle ='black';
+    ctx.lineWidth = 2;
 
     
-  
+    setContext(ctx);
   }, []);
 
-  
-  
+  useEffect(()=>{
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.strokeStyle =props.color;
+  },[props.color])
 
   const startDrawing = (e) => {
     setIsDrawing(true);
@@ -69,21 +76,10 @@ const WhiteBoard = () => {
         onMouseMove={draw}
         onMouseUp={stopDrawing}
         onMouseOut={stopDrawing}
-        style={{ border: '1px solid black' }}
+        style={{ border: "1px solid black" }}
       ></canvas>
     </div>
   );
 };
 
 export default WhiteBoard;
-
-
-
- 
-
-  
-
-  
-
- 
-

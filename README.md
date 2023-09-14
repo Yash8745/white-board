@@ -23,4 +23,4 @@
 1. Its main componets are
     a. Display text - to show things like username , user id , avatar
 
-#### Current Develeopment time 6hrs
+#### Current Develeopment time 8hrs
