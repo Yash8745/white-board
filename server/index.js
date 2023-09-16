@@ -1,8 +1,9 @@
 import express from 'express';
 import cors from 'cors';
+import { createServer } from 'node:http';
 
 const app = express();
-
+const server = createServer(app);
 
 app.use(cors());
 app.use(express.json());
@@ -13,7 +14,7 @@ app.use((request,response)=>{
     response.json({message:'Invalid URL'})
 })
 
-const server = app.listen(1234, err=>{
+server.listen(1234, err=>{
     if(err){
         console.log('Server Crash ', err);
     }
