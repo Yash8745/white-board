@@ -45,7 +45,7 @@ const LoginArea = () => {
                   <div className="">
                     <Row>
                       <Col>
-                        <Link to="/">
+                        <Link to="/draw">
                           <button
                             class="btn btn-outline-light btn-lg"
                             type="submit"
@@ -56,7 +56,7 @@ const LoginArea = () => {
                       </Col>
 
                       <Col>
-                        <Link to="/">
+                        <Link to="/draw">
                         <button
                           class="btn btn-outline-light btn-lg"
                           type="submit"

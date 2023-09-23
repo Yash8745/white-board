@@ -14,11 +14,8 @@ const Header = () => {
           </Col>
           <Col className="">
             <Nav className="me-auto justify-content-end ">
-              <Nav.Link href="#features" className="">
-                Login
-              </Nav.Link>
 
-              <Nav.Link href="#pricing">User</Nav.Link>
+              <Nav.Link href="/user">User</Nav.Link>
             </Nav>
           </Col>
         </Row>
